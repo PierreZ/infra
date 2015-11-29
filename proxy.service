@@ -1,0 +1,12 @@
+[Unit]
+Description=Proxy
+After=letsencrypt.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill proxy
+ExecStartPre=-/usr/bin/docker rm proxy
+ExecStartPre=/usr/bin/docker pull pierrezemb/nginx-proxy:latest
+ExecStart=/usr/bin/docker run --name proxy -p 80:80 -p 443:443 --volumes-from letsencrypt -v /var/run/docker.sock:/tmp/docker.sock:ro nginx-proxy
+ExecStop=/usr/bin/docker stop proxy
