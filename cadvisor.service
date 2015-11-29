@@ -1,6 +1,6 @@
 [Unit]
 Description=cAdvisor Service
-After=docker.service
+After=proxy.service
 Requires=docker.service
 [Service]
 Restart=always
