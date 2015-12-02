@@ -7,6 +7,20 @@ Requires=docker.service
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill proxy
 ExecStartPre=-/usr/bin/docker rm proxy
+ExecStartPre=-/usr/bin/docker kill letsencrypt
+ExecStartPre=-/usr/bin/docker rm letsencrypt
+
 ExecStartPre=/usr/bin/docker pull pierrezemb/nginx-proxy:latest
-ExecStart=/usr/bin/docker run --name proxy -p 80:80 -p 443:443 --volumes-from letsencrypt -v /var/run/docker.sock:/tmp/docker.sock:ro pierrezemb/nginx-proxy
+ExecStartPre=/usr/bin/docker pull quay.io/letsencrypt/letsencrypt:latest
+
+ExecStartPre=/usr/bin/docker run -p 443:443 -p 80:80 --name letsencrypt \
+            -v /etc/letsencrypt \
+            quay.io/letsencrypt/letsencrypt:latest -d pierrezemb.fr -d www.pierrezemb.fr \
+            --agree-tos --agree-dev-preview --server https://acme-v01.api.letsencrypt.org/directory certonly \
+            --rsa-key-size 4096 --email contact@pierrezemb.fr
+
+ExecStart=/usr/bin/docker run --name proxy -p 80:80 -p 443:443 \ 
+			--volumes-from letsencrypt -v /var/run/docker.sock:/tmp/docker.sock:ro  \
+			pierrezemb/nginx-proxy
+
 ExecStop=/usr/bin/docker stop proxy
