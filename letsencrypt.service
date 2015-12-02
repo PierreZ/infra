@@ -10,6 +10,5 @@ ExecStartPre=-/usr/bin/docker rm letsencrypt
 ExecStartPre=/usr/bin/docker pull quay.io/letsencrypt/letsencrypt:latest
 ExecStart=/usr/bin/docker run -p 443:443 -p 80:80 --name letsencrypt \
             -v /etc/letsencrypt \
-            quay.io/letsencrypt/letsencrypt:latest -d pierrezemb.fr -d
-www.pierrezemb.fr --agree-tos --agree-dev-preview --server https://acme-v01.api.letsencrypt.org/directory auth --rsa-key-size 4096 --email contact@pierrezemb.fr
+            quay.io/letsencrypt/letsencrypt:latest -d pierrezemb.fr -d www.pierrezemb.fr --agree-tos --agree-dev-preview --server https://acme-v01.api.letsencrypt.org/directory auth --rsa-key-size 4096 --email contact@pierrezemb.fr
 ExecStop=/usr/bin/docker stop letsencrypt
