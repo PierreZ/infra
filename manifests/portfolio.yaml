@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: portfolio
+spec:  
+  restartPolicy: Always
+  containers:
+  - name: portfolio
+    image: "pierrezemb/portfolio:latest"
+    command: ["/goStatic","--forceHTTP"]
+    ports:
+    - containerPort: 8043
+      hostPort: 8043
+    env:
+    - key: VIRTUAL_HOST 
+      value: "pierrezemb.fr,www.pierrezemb.fr"

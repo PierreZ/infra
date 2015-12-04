@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: peopleinspace
+spec:  
+  restartPolicy: Always
+  containers:
+  - name: peopleinspace
+    image: "pierrezemb/peopleinspace:latest"
+    ports:
+    - containerPort: 8046
+      hostPort: 3000
+    env:
+    - key: VIRTUAL_HOST 
+      value: "space.youcode.io,www.space.youcode.io"
