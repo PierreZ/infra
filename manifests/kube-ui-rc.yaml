@@ -28,6 +28,9 @@ spec:
             memory: 50Mi
         ports:
         - containerPort: 8080
+        env:
+        - key: VIRTUAL_HOST 
+          value: "status.pierrezemb.fr,www.status.pierrezemb.fr"
         livenessProbe:
           httpGet:
             path: /
