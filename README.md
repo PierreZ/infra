@@ -1,6 +1,8 @@
 # infra
 My repo describing my infra
 
+![](https://i.imgflip.com/vcdmw.jpg)
+
 ## How does it works?
 
 >          +------------------------------------+
