@@ -1,0 +1,13 @@
+[Unit]
+Description=Portfolio web server for Steven
+After=proxy.service
+Requires=docker.service
+
+[Service]
+user=core
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill portfolio-watremez
+ExecStartPre=-/usr/bin/docker rm portfolio-watremez
+ExecStartPre=/usr/bin/docker pull stevenwatremez/resume-web-site:latest
+ExecStart=/usr/bin/docker run -e VIRTUAL_HOST=watremez.fr,www.watremez.fr -p 8044:8043 --name portfolio-watremez stevenwatremez/resume-web-site --forceHTTP
+ExecStop=/usr/bin/docker stop portfolio-watremez
