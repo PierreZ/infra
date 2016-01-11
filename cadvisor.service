@@ -2,6 +2,7 @@
 Description=cAdvisor Service
 After=proxy.service
 Requires=docker.service
+
 [Service]
 Restart=always
 ExecStartPre=-/usr/bin/docker kill cadvisor
@@ -9,9 +10,3 @@ ExecStartPre=-/usr/bin/docker rm -f cadvisor
 ExecStartPre=/usr/bin/docker pull google/cadvisor
 ExecStart=/usr/bin/docker run -e VIRTUAL_HOST=status.pierrezemb.fr --volume=/cgroup:/cgroup:ro --privileged=true  --volume=/:/rootfs:ro   --volume=/var/run:/var/run:rw   --volume=/sys:/sys:ro   --volume=/var/lib/docker/:/var/lib/docker:ro   --publish=8080:8080   --name=cadvisor   google/cadvisor:latest
 ExecStop=/usr/bin/docker stop -t 2 cadvisor
-
-[Install]
-WantedBy=multi-user.target
-
-[X-Fleet]
-Global=true
