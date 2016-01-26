@@ -1,0 +1,12 @@
+[Unit]
+Description=Caddy web server
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill caddy
+ExecStartPre=-/usr/bin/docker rm caddy
+ExecStartPre=/usr/bin/docker pull pierrezemb/portfolio:latest
+ExecStart=/usr/bin/docker run -v $HOME/.caddy:/root/.caddy -p 80:80 --name caddy -p 443:443 pierrezemb/infra
+ExecStop=/usr/bin/docker stop caddy
