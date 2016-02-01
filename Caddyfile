@@ -1,4 +1,4 @@
-www.pierrezemb.fr,pierrezemb.fr {
+pierrezemb.fr {
 	gzip
 	tls contact@pierrezemb.fr
 	git github.com/PierreZ/portfolio
@@ -6,20 +6,20 @@ www.pierrezemb.fr,pierrezemb.fr {
 	proxy /api 172.17.42.1:8080
 }
 
-watremez.fr, www.watremez.fr {
+watremez.fr{
 	gzip
 	tls watremez.steven@gmail.com
 	git github.com/StevenWatremez/Resume-web-site
 	root /srv/watremez
 }
 
-guyyannmorvan.fr, www.guyyannmorvan.fr {
+guyyannmorvan.fr {
 	gzip
 	tls refranguy@gmail.com
 	git github.com/guy-yann/portyolo
 	root /srv/gy
 }
 
-space.youcode.io, www.space.youcode.io {
+space.youcode.io {
 	proxy / 172.17.42.1:8046
 }
