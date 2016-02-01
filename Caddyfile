@@ -29,7 +29,7 @@ status.pierrezemb.fr {
 	proxy / 172.17.42.1:8080
 }
 
-warp10.pierrzemb.fr {
+warp10.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	proxy / 172.17.42.1:8070
 }
