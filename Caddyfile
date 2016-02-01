@@ -5,6 +5,13 @@ pierrezemb.fr {
 	root /srv/pierre
 }
 
+beta.pierrezemb.fr {
+	gzip
+	tls contact@pierrezemb.fr
+	git github.com/PierreZ/portfolio-polymer
+	root /srv/pierre-polymer
+}
+
 watremez.fr {
 	gzip
 	tls watremez.steven@gmail.com
