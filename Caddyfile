@@ -35,13 +35,3 @@ status.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	proxy / pierrezemb.fr:8080
 }
-
-warp10.pierrezemb.fr {
-	tls contact@pierrezemb.fr
-	proxy / pierrezemb.fr:8070
-}
-
-quantum.pierrezemb.fr {
-	tls contact@pierrezemb.fr
-	proxy / pierrezemb.fr:8071
-}
