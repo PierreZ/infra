@@ -3,7 +3,6 @@ pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	git github.com/PierreZ/portfolio
 	root /srv/pierre
-	proxy /api 172.17.42.1:8080
 }
 
 watremez.fr {
@@ -23,4 +22,13 @@ guyyannmorvan.fr {
 space.youcode.io {
 	tls off
 	proxy / 172.17.42.1:8046
+}
+
+status.pierrzemb.fr {
+	tls contact@pierrezemb.fr
+	proxy / 172.17.42.1:8080
+}
+warp10.pierrzemb.fr {
+	tls contact@pierrezemb.fr
+	proxy / 172.17.42.1:8070
 }
