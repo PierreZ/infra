@@ -19,15 +19,16 @@ guyyannmorvan.fr {
 	root /srv/gy
 }
 
-space.youcode.io {
+space.youcode.io:80 {
 	tls off
 	proxy / 172.17.42.1:8046
 }
 
-status.pierrzemb.fr {
+status.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	proxy / 172.17.42.1:8080
 }
+
 warp10.pierrzemb.fr {
 	tls contact@pierrezemb.fr
 	proxy / 172.17.42.1:8070
