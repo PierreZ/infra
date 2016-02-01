@@ -26,10 +26,15 @@ space.youcode.io:80 {
 
 status.pierrezemb.fr {
 	tls contact@pierrezemb.fr
-	proxy / 172.17.42.1:8080
+	proxy / pierrezemb.fr:8080
 }
 
 warp10.pierrezemb.fr {
 	tls contact@pierrezemb.fr
-	proxy / 172.17.42.1:8070
+	proxy / pierrezemb.fr:8070
+}
+
+quantum.pierrezemb.fr {
+	tls contact@pierrezemb.fr
+	proxy / pierrezemb.fr:8071
 }
