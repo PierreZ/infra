@@ -21,5 +21,6 @@ guyyannmorvan.fr {
 }
 
 space.youcode.io {
+	tls off
 	proxy / 172.17.42.1:8046
 }
