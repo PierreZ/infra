@@ -10,7 +10,6 @@ beta.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	git {
 		repo     github.com/PierreZ/portfolio
-		path     portfolio-beta
 		branch   beta
 		interval 300
 	}
