@@ -8,8 +8,13 @@ pierrezemb.fr {
 beta.pierrezemb.fr {
 	gzip
 	tls contact@pierrezemb.fr
-	git github.com/PierreZ/portfolio-polymer
-	root /srv/pierre-polymer
+	git {
+		repo     github.com/PierreZ/portfolio
+		path     portfolio-beta
+		branch   beta
+		interval 300
+	}
+	root /srv/portfolio-beta
 }
 
 watremez.fr {
