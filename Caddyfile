@@ -39,3 +39,8 @@ status.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	proxy / pierrezemb.fr:8080
 }
+
+beta.youcode.io {
+	tls contact@pierrezemb.fr
+	proxy / beta.youcode.io:1234
+}
