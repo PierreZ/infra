@@ -1,0 +1,13 @@
+[Unit]
+Description=youcode-frontend
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/usr/bin/docker kill youcode-frontend
+ExecStartPre=-/usr/bin/docker rm youcode-frontend
+ExecStartPre=/usr/bin/docker pull pierrezemb/youcode-frontend:latest
+ExecStart=/usr/bin/docker run-p 1234:8080 --name youcode-frontend pierrezemb/youcode-frontend
+ExecStop=/usr/bin/docker stop youcode-frontend
