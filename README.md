@@ -1,7 +1,7 @@
 # infra
 My repo describing my infra
 
-![](https://i.imgflip.com/vcdmw.jpg)
+![](http://www.datacenterdynamics.com/pictures/2000x2000fit/8/5/2/11852_coreos-logo.jpg)
 
 ## How does it works?
 
