@@ -1,7 +1,11 @@
 pierrezemb.fr {
 	gzip
 	tls contact@pierrezemb.fr
-	git github.com/PierreZ/portfolio
+	git {
+		repo     github.com/PierreZ/portfolio
+		branch   prod
+		interval 3600
+	}
 	root /srv/pierre
 }
 
@@ -10,8 +14,8 @@ beta.pierrezemb.fr {
 	tls contact@pierrezemb.fr
 	git {
 		repo     github.com/PierreZ/portfolio
-		branch   beta
-		interval 300
+		branch   polymer
+		interval 3600
 	}
 	root /srv/portfolio-beta
 }
