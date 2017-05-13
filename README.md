@@ -1,13 +1,22 @@
-# infra
-My repo describing my infra
+# Pierre's personnal Infra
 
-![](http://www.datacenterdynamics.com/pictures/2000x2000fit/8/5/2/11852_coreos-logo.jpg)
+I'm handling my servers hosted at OVH with Ansible.
 
-## How does it works?
+## List of hosts 
 
-tl;dr: I'm using [Caddy](https://caddyserver.com/) as a reverse-proxy/web server.
+* mon.pierrezemb.org hosting my inmemory version of Warp10
+* pierrezemb.fr hosting several websites with caddy
 
-## Why such infra for a single website? Are you mad?
+## Ansible commands
 
-Maybe, maybe not. I'm the kind of developer who like to automate everything. To give you a hint how far I'm going: I don't even use SSH directly... 
+##### ping all hosts
 
+```bash
+ansible all -m ping -i inventory/all -u arch --sudo
+```
+
+#### run common playbook
+
+```bash 
+ansible-playbook -i inventory/all common.yml -u arch --sudo
+```

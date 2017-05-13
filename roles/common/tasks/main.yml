@@ -1,0 +1,22 @@
+---
+# tasks file for common
+
+# https://docs.ansible.com/ansible/pacman_module.html
+
+- name: "add archlinux.fr repository to pacman"
+  lineinfile:
+    dest: "/etc/pacman.conf"
+    state: "present"
+    line: "{{ item }}"
+  with_items:
+    - "[archlinuxfr]"
+    - "SigLevel = Never"
+    - "Server = http://repo.archlinux.fr/$arch"
+  when: ansible_distribution == "ArchLinux"
+
+
+# Install packages
+- pacman:
+    name: vim,zsh,yaourt
+    update_cache: yes
+    state: present

@@ -1,0 +1,7 @@
+---
+- name: apply caddy configuration
+  user: arch
+  hosts: caddy
+
+  roles:
+    - caddy

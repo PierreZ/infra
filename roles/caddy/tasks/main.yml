@@ -1,0 +1,14 @@
+---
+# tasks file for caddy
+
+# https://docs.ansible.com/ansible/pacman_module.html
+
+# - name: Check if caddy is installed
+#   command: pacman -Qe caddy
+#   ignore_errors: yes
+#   register: caddy_check
+
+# - name: Execute script if foo is not installed
+#   command: yaourt --noconfirm -S caddy-full-bin
+#   when: "'was not found' in caddy_check.stderr"
+

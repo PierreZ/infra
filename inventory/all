@@ -1,0 +1,9 @@
+# A place to put variables that apply to all groups
+# Create a file in this directory called "webservers" to set variables
+# for the "webservers" group.
+
+[mon]
+mon.pierrezemb.fr ansible_host=149.202.187.15 
+
+[caddy]
+pierrezemb.fr ansible_host=147.135.132.175
