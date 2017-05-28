@@ -1,0 +1,7 @@
+---
+- name: Warp10 configuration
+  user: arch
+  hosts: warp
+
+  roles:
+    - warp

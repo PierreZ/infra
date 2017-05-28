@@ -4,7 +4,7 @@ I'm handling my servers hosted at OVH with Ansible.
 
 ## List of hosts 
 
-* mon.pierrezemb.org hosting my inmemory version of Warp10
+* mon.pierrezemb.org hosting my Warp10
 * pierrezemb.fr hosting several websites with caddy
 
 ## Ansible commands

@@ -1,0 +1,39 @@
+---
+
+- debug:
+    msg: "install & Init Warp10"
+
+- name: download warp10
+  get_url:
+    url: "https://dl.bintray.com/cityzendata/generic/io/warp10/warp10/{{ warp_version }}/warp10-{{ warp_version }}.tar.gz"
+    dest: /opt/warp10-{{ warp_version }}.tar.gz
+    mode: 0766
+
+- unarchive:
+    src: /opt/warp10-{{ warp_version }}.tar.gz
+    dest: /opt
+    remote_src: True
+
+- file:
+    src: /opt/warp10-{{ warp_version }}/bin/warp10.service
+    dest: /etc/systemd/system/warp10.service
+    owner: root
+    group: root
+    state: link
+
+- name: set JAVA_HOME
+  replace:
+    path: /opt/warp10-{{ warp_version }}/bin/warp10-standalone.sh
+    regexp: '^#JAVA_HOME=/opt/java8$'
+    replace: 'JAVA_HOME=/usr/lib/jvm/default'
+    backup: yes
+
+- name: Bootstrap Warp10
+  command: /opt/warp10-{{ warp_version }}/bin/warp10-standalone.sh bootstrap
+    
+- name: starting warp.service
+  systemd:
+    enabled: yes
+    state: started
+    name: warp10
+    daemon_reload: yes

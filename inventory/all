@@ -2,8 +2,11 @@
 # Create a file in this directory called "webservers" to set variables
 # for the "webservers" group.
 
-[mon]
-mon.pierrezemb.fr ansible_host=149.202.187.15 
+[warp]
+warp.pierrezemb.org ansible_host=149.202.187.15
+
+[warp:vars]
+warp_version=1.2.8-rc1
 
 [caddy]
 pierrezemb.fr ansible_host=147.135.132.175

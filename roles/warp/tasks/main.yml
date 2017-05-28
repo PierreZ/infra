@@ -1,0 +1,14 @@
+---
+# tasks file for warp
+
+- name: checking if first install or upgrade
+  stat: path=/opt/warp10-{{ warp_version }}
+  register: warp_folder
+
+- debug:
+    msg: "/opt/warp10 exists"
+  when: warp_folder.stat.isdir is defined
+
+- name: init warp10
+  include: init.yml
+  when: warp_folder.stat.isdir is not defined
